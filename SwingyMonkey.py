@@ -2,6 +2,7 @@ import sys
 import pygame as pg
 import numpy.random as npr
 import util
+import util_nn
 
 
 class SwingyMonkey:
@@ -259,15 +260,16 @@ class SwingyMonkey:
         return True
 
 if __name__ == '__main__':
-    iters=1000
+    iters=10000
 	
-    util=util.util()
+    #util=util.util()
+    util_nn=util_nn.util()
 	
     for i in range(iters):
 	
 	
     # Create the game object.
-          game = SwingyMonkey(sound=False,tick_length=1,text="Epoch {}".format(i),action_callback=util.action_callback,reward_callback=util.reward_callback)
+          game = SwingyMonkey(sound=False,tick_length=1,text="Epoch {}".format(i),action_callback=util_nn.action_callback,reward_callback=util_nn.reward_callback)
 
     # Loop until you hit something.
 	
